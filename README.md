@@ -8,3 +8,7 @@ System using:
 * Awesome 3.5
 * KDE5
 * Compton
+
+```sh
+git clone --recursive https://github.com/shwsun/awesome.git
+```

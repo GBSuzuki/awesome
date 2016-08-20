@@ -62,7 +62,7 @@ beautiful.init(os.getenv("HOME") .. "/.config/awesome/themes/holo/theme.lua")
 -- common
 modkey     = "Mod4"
 altkey     = "Mod1"
-terminal   = "xterm" or "urxvtc"
+terminal   = "xterm" or "urxvt"
 editor     = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -80,11 +80,6 @@ local layouts = {
     lain.layout.uselesstile.top
 }
 
--- quake terminal
---local quakeconsole = {}
---for s = 1, screen.count() do
---   quakeconsole[s] = lain.util.quake({ app = terminal, wibox_height = 32})
---end
 
 -- quake terminal
 local quakeconsole = {}
@@ -97,7 +92,7 @@ end
 
 -- {{{ Tags
 tags = {
-   names = { " BROWSER ", " KONSOLE ", " EMACS "},
+   names = { " BROWSER ", " TERMINAL ", " EMACS "},
    layout = { layouts[1], layouts[2], layouts[3] }
 }
 for s = 1, screen.count() do
