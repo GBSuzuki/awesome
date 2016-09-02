@@ -52,18 +52,14 @@ end
 run_once("compton -b --detect-rounded-corners --config " .. os.getenv("HOME") .. "/.config/awesome/compton.conf")
 run_once("urxvtd")
 run_once("guake")
-run_once("dropbox")
-run_once("nm-applet")
 run_once("unclutter -root")
 --run_once('xrandr --newmode  "1920x1200_60.00"  193.25  1920 2056 2256 2592  1200 1203 1209 1245 -hsync +vsync')
 --run_once('xrandr --addmode eDP-1 "1920x1200_60.00"')
 --run_once("xrandr --output eDP-1 --mode 1920x1200_60.00")
 run_once("xrandr --output DP-2-1 --rotate right --mode 1920x1080 --left-of eDP-1")
 run_once("xrandr --output DP-1-1 --rotate right --mode 1920x1080 --left-of eDP-1")
-run_once("xflux -z 02215")
+run_once("xflux -l 46.050569 -g 14.515171")
 run_once("/usr/bin/setxkbmap -option 'ctrl:swapcaps'")
-run_once("sudo tee /sys/class/backlight/acpi_video0/brightness <<< 65")
-
 -- }}}
 
 -- {{{ Variable definitions
@@ -104,8 +100,8 @@ end
 
 -- {{{ Tags
 tags = {
-   names = { " BROWSER ", " TERMINAL ", " EMACS ", " VIRTUAL "},
-   layout = { layouts[1], layouts[2], layouts[3] ,layouts[5]  }
+   names = { " BROWSER ", " TERMINAL ", " EMACS "},
+   layout = { layouts[1], layouts[2], layouts[3] }
 }
 for s = 1, screen.count() do
    tags[s] = awful.tag(tags.names, s, tags.layout)
@@ -758,13 +754,8 @@ awful.rules.rules = {
 					 size_hints_honor = false,
 				     opacity = 0.8 } },
 
-
-    -- tags[x][y] means tag(x) in screen(y)
     { rule = { class = "chromium" },
           properties = { tag = tags[1][1] } },
-
-    { rule = { class = "virt-manager" },
-          properties = { tag = tags[1][2] } },
 
     { rule = { instance = "plugin-container" },
           properties = { tag = tags[1][1] } },
@@ -782,9 +773,6 @@ awful.rules.rules = {
 -- Set Firefox to always map on tags number 2 of screen 1.
     { rule = { class = "Firefox"  },
        properties = { tag = tags[1][2]  } },
-
-    --{ rule = { class = "Smuxi"    },
-    --   properties = { tag = tags[4][1]  } },
 
 	{ rule = { class = "Konsole" },
 	   properties = { opacity = 0.8 } },
