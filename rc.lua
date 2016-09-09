@@ -51,7 +51,7 @@ end
 -- Compositor
 run_once("compton -b --detect-rounded-corners --config " .. os.getenv("HOME") .. "/.config/awesome/compton.conf")
 run_once("urxvtd")
-run_once("guake")
+--run_once("guake")
 run_once("dropbox")
 run_once("nm-applet")
 run_once("unclutter -root")
