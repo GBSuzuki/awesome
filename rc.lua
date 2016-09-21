@@ -63,7 +63,6 @@ run_once("xrandr --output DP-1-1 --rotate right --mode 1920x1080 --left-of eDP-1
 run_once("xflux -z 02215")
 run_once("/usr/bin/setxkbmap -option 'ctrl:swapcaps'")
 run_once("sudo tee /sys/class/backlight/acpi_video0/brightness <<< 65")
-
 -- }}}
 
 -- {{{ Variable definitions
@@ -99,12 +98,11 @@ for s = 1, screen.count() do
     quakeconsole[s] = lain.util.quake({ app = "gnome-terminal",   wibox_height = 50})
 end
 
-
 -- }}}
 
 -- {{{ Tags
 tags = {
-   names = { " BROWSER ", " TERMINAL ", " EMACS ", " VIRTUAL "},
+   names = { " BROWSER ", " TERMINAL ", " EMACS ", " THINGS "},
    layout = { layouts[1], layouts[2], layouts[3] ,layouts[5]  }
 }
 for s = 1, screen.count() do
