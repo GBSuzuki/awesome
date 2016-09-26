@@ -766,6 +766,9 @@ awful.rules.rules = {
 
     { rule = { instance = "plugin-container" },
           properties = { tag = tags[1][1] } },
+    
+    { rule = { class = "Emacs" },
+          properties = { tag = tags[1][3] } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { tag = tags[1][4] ,
@@ -882,5 +885,5 @@ client.connect_signal("focus", function(c)
 end)
 client.connect_signal("unfocus", function(c)
     c.border_color = beautiful.border_normal
-    c.opacity = 0.7
+    c.opacity = 0.9
 end)
